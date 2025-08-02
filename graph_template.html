@@ -81,12 +81,22 @@
 <script>
   function openFullscreen() {
     const docElm = document.documentElement;
+  
     if (docElm.requestFullscreen) {
       docElm.requestFullscreen();
-    } else if (docElm.webkitRequestFullscreen) { // Safari
+    } else if (docElm.webkitRequestFullscreen) {
       docElm.webkitRequestFullscreen();
     } else if (docElm.msRequestFullscreen) { // IE11
       docElm.msRequestFullscreen();
+    } else {
+      // Fallback: эмулируем fullscreen на iOS
+      document.body.style.position = 'fixed';
+      document.body.style.top = '0';
+      document.body.style.left = '0';
+      document.body.style.width = '100vw';
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
+      document.querySelector('svg').style.height = '100vh';
     }
   }
 </script>
