@@ -293,6 +293,35 @@ document.getElementById("search-input").addEventListener("input", (e) => {
       ? 3 : null;
   });
 });
+
+<!-- КНОПКА FULLSCREEN -->
+<button onclick="openFullscreen()" style="
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #6A50FF;
+  color: white;
+  font-family: 'Lexend', sans-serif;
+  cursor: pointer;
+">Full screen</button>
+
+<script>
+  function openFullscreen() {
+    const docElm = document.documentElement;
+    if (docElm.requestFullscreen) {
+      docElm.requestFullscreen();
+    } else if (docElm.webkitRequestFullscreen) { // Safari
+      docElm.webkitRequestFullscreen();
+    } else if (docElm.msRequestFullscreen) { // IE11
+      docElm.msRequestFullscreen();
+    }
+  }
+</script>
+
 </script>
 </body>
 </html>
