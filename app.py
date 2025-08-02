@@ -38,7 +38,7 @@ def get_google_drive_image_url(url):
         return f"https://drive.google.com/thumbnail?id={file_id}"
     return url
 
-st.set_page_config(page_title="Notations Lab", layout="wide")
+st.set_page_config(page_title="Notations Lab Test", layout="wide")
 st.markdown(f"""
   <style>
     html, body, .stApp, .css-18e3th9, .css-1d391kg {{
